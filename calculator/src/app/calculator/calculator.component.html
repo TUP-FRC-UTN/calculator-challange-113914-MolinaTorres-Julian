@@ -1,15 +1,22 @@
-<div>
+<div id="calculadora">
     <h2>Calculadora</h2>
-    <label for="value1">Valor 1: </label>
-    <input id="value1" type="number" (input)="handleInput1($event)" placeholder="Ingrese el primer valor" [value]="value1">
-    <br><br>
-    <label for="value2">Valor 2: </label>
-    <input id="value2" type="number" (input)="handleInput2($event)" placeholder="Ingrese el segundo valor" [value]="value2">
-    <br><br>
-    <label for="">Resultado: </label>
-    <input type="number" disabled [value]="result">
-
-    <app-calculator-child [value1]="value1" [value2]="value2" (resultEvent)="onResultReceived($event)" (clearEvent)="clearInputs()"/>
-
-    
+    <div class="div-inputs">
+        <label for="value1">Valor 1</label>
+        <input id="value1" type="number" (input)="handleInput1($event)" placeholder="Ingrese el primer valor"
+            [value]="value1">
+    </div>
+    <br>
+    <div class="div-inputs">
+        <label for="value2">Valor 2</label>
+        <input id="value2" type="number" (input)="handleInput2($event)" placeholder="Ingrese el segundo valor"
+            [value]="value2">
+    </div>
+    <br>
+    <div class="div-inputs">
+        <label for="">Resultado</label>
+        <input type="number" disabled [value]="result">
+    </div>
+    <br>
+    <app-calculator-child [value1]="value1" [value2]="value2" (resultEvent)="onResultReceived($event)"
+        (clearEvent)="clearInputs()" />
 </div>
